@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.subsystems.ExampleSubsystem;
-import edu.wpi.first.wpilibj.templates.subsystems.soulTrain;
+import edu.wpi.first.wpilibj.templates.subsystems.SoulTrain;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 
 /**
@@ -18,8 +18,8 @@ public abstract class CommandBase extends Command {
     public static OI oi;
     // Create a single static instance of all of your subsystems
     public static ExampleSubsystem exampleSubsystem;
-    public static soulTrain drive;
-    public static RobotMap robotMap;
+    public static SoulTrain soulDrive = new SoulTrain();
+    public static RobotMap robotMap = new RobotMap();
     
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
@@ -29,11 +29,8 @@ public abstract class CommandBase extends Command {
         // news. Don't move it.
         oi = new OI();
         exampleSubsystem = new ExampleSubsystem();
-        drive = new soulTrain();
-        robotMap = new RobotMap();
-
         // Show what command your subsystem is running on the SmartDashboard
-        SmartDashboard.putData(drive);
+        SmartDashboard.putData(soulDrive);
     }
 
     public CommandBase(String name) {

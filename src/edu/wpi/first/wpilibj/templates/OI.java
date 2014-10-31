@@ -28,33 +28,15 @@ public class OI {
     }
     
     public double getXMovement() {
-        x = stick1.getX();
-        if (Math.abs(x) <= deadzone) {
-             return 0;
-        }
-        else {
-            return x;
-        } 
+        return stick1.getX();
     }
     
     public double getYMovement() {
-        y = stick1.getY();
-        if (Math.abs(y) <= deadzone) {
-            return 0;
-        }
-        else {
-            return y;
-        }
+        return stick1.getY();
     }
     
     public double getRotationMovement() {
-        z = stick2.getX();
-        if (Math.abs(z) <= deadzone) {
-            return 0;
-        }
-        else {
-            return z;
-        }
+        return stick2.getX();
     }
     // Another type of button you can create is a DigitalIOButton, which is
     // a button or switch hooked up to the cypress module. These are useful if

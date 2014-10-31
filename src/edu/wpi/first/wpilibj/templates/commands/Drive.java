@@ -15,7 +15,7 @@ public class Drive extends CommandBase {
     public Drive() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(drive);
+        requires(soulDrive);
 
         
     }
@@ -26,7 +26,7 @@ public class Drive extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        drive.mecanumDrive(50, oi.getYMovement(), oi.getRotationMovement());
+        soulDrive.mecanumDrive(oi.getXMovement(), oi.getYMovement(), oi.getRotationMovement());
     }
 
     // Make this return true when this Command no longer needs to run execute()
