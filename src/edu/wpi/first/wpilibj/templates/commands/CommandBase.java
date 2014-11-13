@@ -15,11 +15,11 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  */
 public abstract class CommandBase extends Command {
 
-    public static SoulTrain soulDrive;
-    public static RobotMap robotMap;
     public static OI oi;
     // Create a single static instance of all of your subsystems
-
+    public static ExampleSubsystem exampleSubsystem;
+    public static SoulTrain soulDrive = new SoulTrain();
+    public static RobotMap robotMap = new RobotMap();
     
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
@@ -27,10 +27,10 @@ public abstract class CommandBase extends Command {
         // which commands extend), subsystems are not guaranteed to be
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
-        robotMap = new RobotMap();
-        soulDrive = new SoulTrain();
         oi = new OI();
+        exampleSubsystem = new ExampleSubsystem();
         // Show what command your subsystem is running on the SmartDashboard
+        SmartDashboard.putData(soulDrive);
     }
 
     public CommandBase(String name) {

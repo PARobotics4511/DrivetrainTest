@@ -15,7 +15,6 @@ public class Drive extends CommandBase {
     public Drive() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        super("Drive");
         requires(soulDrive);
 
         

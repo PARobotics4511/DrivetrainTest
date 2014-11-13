@@ -11,13 +11,13 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
     
-    //public double x;
-    //public double y;
-    //public double z;
-    //public double deadzone;
+    public double x;
+    public double y;
+    public double z;
+    public double deadzone;
     
-    public Joystick stick1;
-    public Joystick stick2;
+    public Joystick stick1 = new Joystick(1);
+    public Joystick stick2 = new Joystick(2);
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -25,8 +25,6 @@ public class OI {
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
     public OI() {
-        stick1 = new Joystick(1);
-        stick2 = new Joystick(2);
     }
     
     public double getXMovement() {
