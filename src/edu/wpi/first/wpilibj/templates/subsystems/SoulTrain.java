@@ -22,6 +22,8 @@ public class SoulTrain extends Subsystem {
     
     public SoulTrain() {
         drivetrain = new RobotDrive(RobotMap.leftFrontMotor,RobotMap.leftRearMotor,RobotMap.rightFrontMotor,RobotMap.rightRearMotor);
+        drivetrain.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        drivetrain.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
     }
 
     public void initDefaultCommand() {
