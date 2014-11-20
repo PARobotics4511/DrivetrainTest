@@ -18,6 +18,7 @@ public class RobotMap {
     public static Talon leftRearMotor = new Talon(3);
     public static Talon rightRearMotor = new Talon(4);
     
+    
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
     // public static final int rangefinderPort = 1;
