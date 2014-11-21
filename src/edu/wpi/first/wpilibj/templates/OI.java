@@ -11,13 +11,10 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
     
-    public double x;
-    public double y;
-    public double z;
     public double deadzone;
     
-    public Joystick stick1 = new Joystick(1);
-    public Joystick stick2 = new Joystick(2);
+    public Joystick stick1;
+    public Joystick stick2;
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -25,18 +22,45 @@ public class OI {
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
     public OI() {
+        stick1 = new Joystick(1);
+        stick2 = new Joystick(2);
+        deadzone = .1;
     }
     
     public double getXMovement() {
-        return stick1.getX();
+        if (stick1.getX() > deadzone) {
+            return stick1.getX()*stick1.getX();
+        }
+        else if (stick1.getX() < -deadzone) {
+            return -stick1.getX()*stick1.getX();
+        }
+        else {
+            return 0;
+        }
     }
     
     public double getYMovement() {
-        return stick1.getY();
+        if (stick1.getY() > deadzone) {
+            return stick1.getY()*stick1.getY();
+        }
+        else if (stick1.getY() < -deadzone) {
+            return -stick1.getY()*stick1.getY();
+        }
+        else {
+            return 0;
+        }
     }
     
     public double getRotationMovement() {
-        return stick2.getX();
+        if (stick2.getX() > deadzone) {
+            return stick2.getX()*stick2.getX();
+        }
+        else if (stick2.getX() < -deadzone) {
+            return -stick2.getX()*stick2.getX();
+        }
+        else {
+            return 0;
+        }
     }
     // Another type of button you can create is a DigitalIOButton, which is
     // a button or switch hooked up to the cypress module. These are useful if
